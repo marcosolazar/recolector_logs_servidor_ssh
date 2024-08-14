@@ -1,21 +1,18 @@
 ################################
 ####### Respaldar logs  ########
 ################################
-
 import paramiko
 import os
 from datetime import datetime
 
 # Datos de conexión al servidor
-hostname = '192.168.11.198'
+hostname = '150.45.222.100'
 port = 22
-username = 'epidater'
-password = 'r00t&4ss'
-mule_ee_path = '/home/epidater/scripting/mule_ee.log'
-mule_agent_path = '/home/epidater/scripting/mule_agent.log'
-
-# Directorio de destino en tu computadora local
-local_backup_dir = os.path.expanduser('~/Desktop/192.168.11.198')
+username = 'muleadm'
+password = 'YHuk-3265PL'
+mule_ee_path = '/app/mule/logs/mule_ee.log'
+mule_agent_path = '/app/mule/logs/mule_agent.log'
+local_backup_dir = os.path.expanduser('~/Desktop/Recoleccion de Logs/TDBSORSVR128')
 
 # Crear el directorio de backup si no existe
 if not os.path.exists(local_backup_dir):
@@ -43,7 +40,6 @@ print(f'Log file desde {mule_agent_path} ha sido respaldado a {local_mule_agent}
 ################################
 ##### Buscador de errores ######
 ################################
-
 def buscar_errores(archivo_log, archivo_errores):
     with open(archivo_log, 'r') as log:
         lineas = log.readlines()
@@ -65,7 +61,7 @@ buscar_errores(local_mule_ee, archivo_errores_mule_ee)
 buscar_errores(local_mule_agent, archivo_errores_mule_agent)
 
 
-
+# por Marcos Olazar para Epidata :)
 
 
 
